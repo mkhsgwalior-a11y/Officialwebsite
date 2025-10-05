@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>महाराष्ट्र क्षत्रिय हितचिंतक सभा</title>
+
+  <!-- Bootstrap, FontAwesome, and Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bhagwa: #FF9933;
+      --dark-bhagwa: #E67E22;
+      --light-bhagwa: #FFD9B3;
+      --white: #fffdf9;
+    }
+
+    body {
+      font-family: 'Hind', sans-serif;
+      background-color: var(--white);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, var(--bhagwa), var(--dark-bhagwa));
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 10px 0;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand img {
+      height: 55px;
+      margin-right: 10px;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      padding: 8px 15px !important;
+      transition: all 0.3s;
+      border-radius: 4px;
+      margin: 2px 5px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://www.travelsiteindia.com/img/city/summer-in-gwalior.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .main-image-container {
+      margin: 40px auto 0;
+      max-width: 600px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 5px solid var(--light-bhagwa);
+    }
+
+    .main-image {
+      width: 100%;
+      display: block;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--dark-bhagwa);
+      margin-bottom: 40px;
+      font-weight: bold;
+      font-size: 1.8rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background: var(--bhagwa);
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    .leader-card {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      height: 100%;
+    }
+
+    .leader-card:hover {
+      background: var(--light-bhagwa);
+    }
+
+    .leader-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--bhagwa);
+      margin-bottom: 15px;
+    }
+
+    .program-card {
+      padding: 20px;
+      border-left: 5px solid var(--bhagwa);
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+
+    .program-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item {
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      background: linear-gradient(90deg, var(--bhagwa), var(--dark-bhagwa));
+      color: white;
+      padding: 40px 0;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0;
+        background-attachment: scroll;
+      }
+
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0;
+      }
+
+      .hero-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .leader-img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="mkhs seal-modified (1).png" alt="सभा प्रतीक">
+        <span>महाराष्ट्र क्षत्रिय हितचिंतक सभा</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">मुखपृष्ठ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">परिचय</a></li>
+          <li class="nav-item"><a class="nav-link" href="#committees">समितियाँ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#leaders">नेतृत्व</a></li>
+          <li class="nav-item"><a class="nav-link" href="#programs">कार्यक्रम</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">गैलरी</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">संपर्क</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>महाराष्ट्र क्षत्रिय हितचिंतक सभा</h1>
+      <p>स्थापना: 1905</p>
+      <div class="main-image-container">
+        <img src="https://images.unsplash.com/photo-1632133465018-a66d7cb26af7?fm=jpg&q=60&w=3000"
+             alt="छत्रपति शिवाजी महाराज" class="main-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaders Section -->
+  <section id="leaders" class="py-5">
+    <div class="container">
+      <h2 class="section-title">हमारा नेतृत्व</h2>
+      <div class="row">
+        <!-- Leader 1 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="leader-card">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRWImgCgFkL_BuRY3BN358CBl7dDz3ZpjKvlsb6tdRd4f4r9fmxit0lyqG9kWubEvo-GNIH-9vGk2RBxQAuWSlMCqeJVBba2QoTaTEd-w" class="leader-img" alt="ज्योतिरादित्य सिंधिया">
+            <h5>ज्योतिरादित्य सिंधिया</h5>
+            <p>मुख्य संरक्षक</p>
+          </div>
+        </div>
+        <!-- Repeat same pattern for other leaders -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="leader-card">
+            <img src="https://i.ibb.co/1TgY0zv/user.jpg" class="leader-img" alt="बाल राजे शिंदे">
+            <h5>बाल राजे शिंदे</h5>
+            <p>अध्यक्ष</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="leader-card">
+            <img src="https://i.ibb.co/1TgY0zv/user.jpg" class="leader-img" alt="दिलीप जगताप">
+            <h5>दिलीप जगताप</h5>
+            <p>उपाध्यक्ष</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="leader-card">
+            <img src="https://i.ibb.co/1TgY0zv/user.jpg" class="leader-img" alt="धर्मेंद्र गायकवाड़">
+            <h5>धर्मेंद्र गायकवाड़</h5>
+            <p>सचिव</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section id="programs" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">हमारे कार्यक्रम</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>पिछले कार्यक्रम</h3>
+          <div class="program-card">
+            <h5>वार्षिक छात्रवृत्ति वितरण (2023)</h5>
+            <p class="text-muted">15 जनवरी, 2023</p>
+            <p>मराठा समुदाय के 150 योग्य छात्रों को छात्रवृत्ति वितरित की गई।</p>
+          </div>
+          <div class="program-card">
+            <h5>सांस्कृतिक उत्सव</h5>
+            <p class="text-muted">8 मार्च, 2023</p>
+            <p>मराठी संस्कृति का जश्न पारंपरिक संगीत, नृत्य और खाद्य उत्सव के साथ।</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h3>आगामी कार्यक्रम</h3>
+          <div class="program-card">
+            <h5>युवा नेतृत्व कार्यशाला</h5>
+            <p class="text-muted">18 नवंबर, 2023</p>
+            <p>हमारे समुदाय के युवाओं में नेतृत्व कौशल विकसित करने के लिए कार्यशाला।</p>
+          </div>
+          <div class="program-card">
+            <h5>118वां स्थापना दिवस</h5>
+            <p class="text-muted">10 दिसंबर, 2023</p>
+            <p>मराठा समुदाय की सेवा के 118 वर्ष पूरे होने का जश्न।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">गैलरी</h2>
+      <div class="row">
+        <!-- Each gallery item -->
+        <div class="col-lg-3 col-md-4 col-6 mb-4">
+          <div class="gallery-item">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23FFB366'/><text x='150' y='100' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dominant-baseline='middle'>कार्यक्रम 1</text></svg>" alt="गैलरी 1">
+          </div>
+        </div>
+        <!-- Duplicate & update as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="section-title">संपर्क करें</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <h4>संपर्क सूचना</h4>
+          <p><i class="fas fa-map-marker-alt"></i> जयेन्द्रगंज, ग्वालियर, मध्य प्रदेश, 474009</p>
+          <p><i class="fas fa-phone"></i> 0751 232 0266</p>
+          <p><i class="fas fa-envelope"></i> info@mkhsgwalior</p>
+        </div>
+
+        <div class="col-md-6">
+          <h4>छात्रावास प्रवेश जानकारी</h4>
+          <p>मराठा छात्रों के लिए मुफ्त छात्रावास सुविधा की जानकारी हेतु हमारे कार्यालय आएं या संपर्क करें।</p>
+          <p><i class="fas fa-envelope"></i> mkhsgwalior@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5>महाराष्ट्र क्षत्रिय हितचिंतक सभा</h5>
+          <p>1905 में स्थापित — मराठा समुदाय के कल्याण हेतु कार्यरत।</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>त्वरित लिंक</h5>
+          <ul class="list-unstyled">
+            <li><a href="#about">परिचय</a></li>
+            <li><a href="#leaders">नेतृत्व</a></li>
+            <li><a href="#programs">कार्यक्रम</a></li>
+            <li><a href="#contact">संपर्क</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>हमसे जुड़ें</h5>
+          <div class="d-flex">
+            <a href="#" class="me-3"><i class="fab fa-facebook-f fa-2x"></i></a>
+            <a href="#" class="me-3"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2025 महाराष्ट्र क्षत्रिय हितचिंतक सभा। सर्वाधिकार सुरक्षित।</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Leader Cards 1-12 -->
+  <div class="row mt-4">
+
+  <!-- Card 1 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Jyotiraditya_Scindia_at_the_India_Economic_Summit_2009.jpg/800px-Jyotiraditya_Scindia_at_the_India_Economic_Summit_2009.jpg') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 1</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal1">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQr1jQVjWjUN7MBP9mdOp_Uw3CzqsX3ch8O1JiVLSRL3ZgVhS0zEbADCg8osQPUDd8K-kUvlwCUX9mFDNfF9FA4aJ6Z-VSYWEDhcTMoVqpf3uWheNKfLifitqOPb278PSjTLyqo2AwFEZc') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 2</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal2">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Jiwajirao_Scindia_of_Gwalior.jpg/400px-Jiwajirao_Scindia_of_Gwalior.jpg') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 3</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal3">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 4</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal4">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://upload.wikimedia.org/wikipedia/commons/f/fd/The_Maharajah_Scindia_of_Gwalior%22_%28r.1843-1886%29_as_seen_in_the_Illustrated_London_News.gif') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 5</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal5">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Jankoji_Rao_Scindia_II_of_Gwalior.jpg/500px-Jankoji_Rao_Scindia_II_of_Gwalior.jpg') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 6</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal6">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/MAHARAJA_DAULAT_RAO_SCINDIA_OF_GWALIOR_%28R._1794-1827%29.jpg/390px-MAHARAJA_DAULAT_RAO_SCINDIA_OF_GWALIOR_%28R._1794-1827%29.jpg') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 7</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal7">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://en.wikipedia.org/wiki/Jankoji_Rao_Scindia') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 8</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal8">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 9 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Mahadaji_Sindhia.jpg/405px-Mahadaji_Sindhia.jpg') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 9</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal9">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Dattaji_Rao_Scindia.jpg/351px-Dattaji_Rao_Scindia.jpg') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 10</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal10">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 11 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...') center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 11</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal11">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 12 -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="leader-card position-relative text-white d-flex flex-column justify-content-end" 
+         style="height: 250px; background: #444 center/cover no-repeat; border-radius: 10px;">
+      <div class="p-3" style="background: rgba(0,0,0,0.5); border-radius: 0 0 10px 10px;">
+        <h5>नेता 12</h5>
+        <span class="view-more-text" data-bs-toggle="modal" data-bs-target="#modal12">और पढ़ें</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modals with Image + Info Layout -->
+<!-- Modals 1-12 -->
+<!-- Template for each modal -->
+<!-- Modal 1 -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">नेता 1</h4>
+          <p class="fw-semibold">नेता 1 की जानकारी यहाँ लिखें।</p>
+          <p class="fw-semibold">यहां उनके योगदान और भूमिका को विस्तार से लिखें।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Repeat Modal 2 to Modal 12 similarly -->
+<!-- Modal 2-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 2-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 3-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 4-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 5-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 6-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 7-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 8-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 9-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 10-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 11-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card 12-->
+<div class="modal fade" id="modalAmit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 d-flex flex-column flex-md-row">
+        <div class="modal-image flex-shrink-0" 
+             style="background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; min-height: 250px; border: 2px solid black; border-radius: 5px; width: 100%; max-width: 40%;">
+        </div>
+        <div class="modal-info p-4" style="background-color: #fff; width: 100%; max-width: 60%;">
+          <h4 class="fw-bold mb-3">माधो राव सिंधिया</h4>
+          <p class="fw-semibold">अमित देशमुख सचिव हैं और छात्रावास व कार्यक्रम प्रबंधन में सक्रिय योगदान देते हैं।</p>
+          <p class="fw-semibold">वे छात्रों के लिए शिक्षा और प्रशिक्षण कार्यक्रमों का संचालन करते हैं।</p>
+          <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

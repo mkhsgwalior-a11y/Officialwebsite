@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>महाराष्ट्र क्षत्रिय हितचिंतक सभा</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bhagwa: #FF9933;
+      --dark-bhagwa: #E67E22;
+      --light-bhagwa: #FFD9B3;
+      --white: #fffdf9;
+    }
+    
+    body {
+      font-family: 'Hind', sans-serif;
+      background-color: var(--white);
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth; /* Add smooth scrolling to the whole page */
+    }
+    
+    .navbar {
+      background: linear-gradient(90deg, var(--bhagwa), var(--dark-bhagwa));
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 10px 0;
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    
+    .navbar-brand img { 
+      height: 55px; 
+      margin-right: 10px;
+    }
+    
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      padding: 8px 15px !important;
+      transition: all 0.3s;
+      border-radius: 4px;
+      margin: 2px 5px;
+    }
+    
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+      background-color: rgba(255,255,255,0.2);
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.travelsiteindia.com/img/city/summer-in-gwalior.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-section h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .hero-section p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .main-image-container {
+      margin: 40px auto 0;
+      max-width: 600px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 5px solid var(--light-bhagwa);
+    }
+    
+    .main-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .section-title {
+      text-align: center;
+      color: var(--dark-bhagwa);
+      margin-bottom: 40px;
+      font-weight: bold;
+      font-size: 1.8rem;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background: var(--bhagwa);
+      display: block;
+      margin: 10px auto 0;
+    }
+    
+    .card-custom {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      padding: 20px;
+    }
+    
+    .card-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .leader-card {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      height: 100%;
+    }
+    
+    .leader-card:hover {
+      background: var(--light-bhagwa);
+    }
+    
+    .leader-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--bhagwa);
+      margin-bottom: 15px;
+    }
+    
+    .program-card {
+      padding: 20px;
+      border-left: 5px solid var(--bhagwa);
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    
+    .program-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .gallery-item {
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .footer {
+      background: linear-gradient(90deg, var(--bhagwa), var(--dark-bhagwa));
+      color: white;
+      padding: 40px 0;
+    }
+    
+    .footer a { 
+      color: white; 
+      text-decoration: none; 
+    }
+    
+    .footer a:hover { 
+      text-decoration: underline; 
+    }
+    
+    .contact-info {
+      margin-top: 20px;
+    }
+    
+    .contact-info i {
+      margin-right: 10px;
+      color: var(--light-bhagwa);
+    }
+    
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0;
+        background-attachment: scroll;
+      }
+      
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-section p {
+        font-size: 1rem;
+      }
+      
+      .main-image-container {
+        margin: 30px auto 0;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1rem;
+      }
+      
+      .navbar-brand img {
+        height: 45px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0;
+      }
+      
+      .hero-section h1 {
+        font-size: 1.8rem;
+      }
+      
+      .navbar-brand {
+        font-size: 0.9rem;
+      }
+      
+      .navbar-brand img {
+        height: 40px;
+      }
+      
+      .leader-img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="mkhs seal-modified (1).png"
+              
+                    alt="सभा प्रतीक">
+                <span class="ms-2 marathi-font">महाराष्ट्र क्षत्रिय हितचिंतक सभा</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">मुखपृष्ठ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">परिचय</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#committees">समितियाँ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#leaders">नेतृत्व</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programs">कार्यक्रम</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">गैलरी</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">संपर्क</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h1>महाराष्ट्र क्षत्रिय हितचिंतक सभा</h1>
+        <p>स्थापना: 1905 </p>
+        
+        <div class="main-image-container">
+          <img src="https://images.unsplash.com/photo-1632133465018-a66d7cb26af7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hpdmFqaSUyMG1haGFyYWp8ZW58MHx8MHx8fDA%3D" 
+               alt="छत्रपति शिवाजी महाराज" class="main-image">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about" class="info-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Image -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="info-image rounded overflow-hidden shadow">
+            <img src="https://wallpapers.com/images/hd/shivaji-maharaj-art-on-throne-hd-35ncg9geewjv14hx.jpg" alt="info image" class="img-fluid">
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="col-lg-6">
+          <h2 class="mb-4 fw-bold text-dark">!!महाराष्ट्र हितचिंतक सभेची स्थापना !!<br class="d-none d-lg-block"></h2>
+          <p class="mb-4 text-secondary">महाराष्ट्र हितचिंतक सभा जसिकी स्थापना सिंधिया द्वारा वर्ष 1905 में हुई थी, ये सभा मराठा समाज कल्याण के हित में बन गई थी|जिसका लक्ष्य मराठा समाज के बच्चों को निःशुल्क शिक्षा प्रदान करना</p>
+          <div class="d-flex flex-wrap">
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Rest of your HTML content remains the same -->
+  <!-- 🌟 Leadership Section -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4 fw-bold">हमारे प्रेरणास्त्रोत</h2>
+    <div class="row">
+
+      <!-- ===== CARD 1 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Jyotiraditya_Scindia_at_the_India_Economic_Summit_2009.jpg/800px-Jyotiraditya_Scindia_at_the_India_Economic_Summit_2009.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>ज्योतिरादित्य सिंधिया</h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal1" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 2 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQr1jQVjWjUN7MBP9mdOp_Uw3CzqsX3ch8O1JiVLSRL3ZgVhS0zEbADCg8osQPUDd8K-kUvlwCUX9mFDNfF9FA4aJ6Z-VSYWEDhcTMoVqpf3uWheNKfLifitqOPb278PSjTLyqo2AwFEZc') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>माधव राव सिंधिया</h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal2" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 3 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/3/30/Jiwajirao_Scindia_of_Gwalior.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>जिवाजीराव सिंधिया</h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal3" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 4 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5> माधोराव सिंधिया</h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal4" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 5 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/f/fd/The_Maharajah_Scindia_of_Gwalior%22_%28r.1843-1886%29_as_seen_in_the_Illustrated_London_News.gif') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>जायाजीराव सिंधिया</h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal5" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 6 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Jankoji_Rao_Scindia_II_of_Gwalior.jpg/323px-Jankoji_Rao_Scindia_II_of_Gwalior.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>जनकोजिराव सिंधिया २ </h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal6" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 7 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/MAHARAJA_DAULAT_RAO_SCINDIA_OF_GWALIOR_%28R._1794-1827%29.jpg/390px-MAHARAJA_DAULAT_RAO_SCINDIA_OF_GWALIOR_%28R._1794-1827%29.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>दौलतराव सिंधिया  </h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal7" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 8 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Jankoji_Scindia_in_Battle_of_Panipat_%281761%29_fighting_Afghans.jpg/318px-Jankoji_Scindia_in_Battle_of_Panipat_%281761%29_fighting_Afghans.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>जनकोजिराव सिंधिया १ </h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal8" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 9 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Mahadaji_Sindhia.jpg/405px-Mahadaji_Sindhia.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>माहादाजीराव सिंधिया  </h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal9" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 10 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Dattaji_Rao_Scindia.jpg/351px-Dattaji_Rao_Scindia.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5> दत्ताजीराव सिंधिया </h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal10" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 11 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Jayappaji_Rao_Shinde.jpg/500px-Jayappaji_Rao_Shinde.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5> जयप्पाजीराव सिंधिया  </h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal11" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CARD 12 ===== -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="leader-card text-white d-flex flex-column justify-content-end"
+             style="height:250px; background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/Ranoji_Rao_Scindia.jpg') center/cover; border-radius:12px;">
+          <div class="p-3" style="background:rgba(0,0,0,0.55); border-radius:0 0 12px 12px;">
+            <h5>रानोंजीराव सिंधिया </h5>
+            <span data-bs-toggle="modal" data-bs-target="#modal12" style="cursor:pointer; color:#ffd700;">और पढ़ें</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 🌟 MODALS 1–12 (images updated) -->
+
+  <!-- ===== MODAL 1 ===== -->
+  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Jyotiraditya_Scindia_at_the_India_Economic_Summit_2009.jpg/800px-Jyotiraditya_Scindia_at_the_India_Economic_Summit_2009.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">ज्योतिरादित्य सिंधिया</h4>
+            <p>Jyotiraditya Madhavrao Scindia (born 1 January 1971; Hindi pronunciation: [d͡ʒjoːt̪ɪɾaːd̪ɪt̪jə maːd̪ʱəʋ.ɾaːʋ sɪn̪d̪ʱɪjaː]) is an Indian politician who is the 43rd Union Minister of Communications and the 10th Minister of Development of North Eastern Region since 2024. He was a Member of Parliament in the Rajya Sabha representing the state of Madhya Pradesh from 2020 till his win in the 2024 Lok Sabha elections.[1] He was a Member of Parliament in the Lok Sabha, representing the Guna constituency in Madhya Pradesh from 2002 until his defeat in the 2019 Indian general election, and then since 4 June 2024. He is a former member of the Indian National Congress (INC) from 2001 to 2020 and a member of the Bharatiya Janata Party (BJP) since 2020. While a member of the INC, he was the Union Minister for Power and Corporate in the second Manmohan Singh ministry from 2012 to 2014.
+
+Scindia is the son of politician Madhavrao Scindia, and a grandson of Jiwajirao Scindia, the last ruler of the princely state of Gwalior during the British Raj in India. Jyotiraditya was briefly the titular Crown Prince of Gwalior in 1971, until the privy purses and titles of Indian royals were abolished by the government in 1971.</p>
+            <p>Early life and education
+Scindia was born on 1 January 1971 in Mumbai to Madhavrao Scindia and Madhavi Raje Scindia. He originally belongs to Kurmi caste.[2][3]
+
+Scindia was educated at Campion School, Mumbai and at The Doon School, Dehradun.[4] At Doon School, Scindia was a contemporary of Rahul Gandhi.[5] He then studied at St. Stephen's College, Delhi. He later went to Harvard College, the undergraduate liberal arts college of Harvard University, where he graduated with BA degree in Economics in 1993. In 2001, he received a Master of Business Administration from the Stanford Graduate School of Business.[6][7][8]
+
+Scindia is a grandson of Jiwajirao Scindia, the last Maharaja of the princely state of Gwalior. His father Madhavrao was a politician and a minister in the government of Rajiv Gandhi. His mother, Madhavi Raje (Kiran Rajya Lakshmi Devi), hails from the royal family of Nepal. He is married to Priyadarshini Raje Scindia who studied at Fort Convent School, Mumbai and later Sophia College.[9]</p>
+        <p> Bharatiya Janata Party
+
+Jyotiraditya M. Scindia assumed charge as the Union Minister of Development of North Eastern Region (DoNER), in New Delhi on June 12, 2024.
+Citing disgruntlement with the INC leadership, Scindia quit the Congress party on 10 March 2020. The Congress party then released a statement claiming that he had been expelled for "anti-party activities." He joined the BJP on 11 March 2020.[24][25] Other MLAs loyal to him also resigned from the INC and their MLA posts. This led to the 2020 Madhya Pradesh political crisis which in turn resulted in the resignation of Kamal Nath as chief minister on 23 March 2020. Nath's replacement, Shivraj Singh Chouhan, was sworn in as chief minister of Madhya Pradesh on 23 March 2020.[26]
+
+On 19 June 2020, Scindia was elected a BJP Rajya Sabha MP from Madhya Pradesh.[27] On 7 July 2021, he was appointed as the Minister of Civil Aviation in Second Modi ministry after a cabinet reshuffle in July 2021.[28]
+
+In February 2022, he was appointed Prime Minister Modi's special envoy to Romania to oversee the evacuation of Indian nationals in Ukraine resulting from the ongoing Russian invasion of Ukraine. As a part of Operation Ganga, he oversaw the evacuation efforts of students and Indian professionals through Bucharest and Suceava.[29]</p>
+       
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 2 ===== -->
+  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQr1jQVjWjUN7MBP9mdOp_Uw3CzqsX3ch8O1JiVLSRL3ZgVhS0zEbADCg8osQPUDd8K-kUvlwCUX9mFDNfF9FA4aJ6Z-VSYWEDhcTMoVqpf3uWheNKfLifitqOPb278PSjTLyqo2AwFEZc') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">माधव राव सिंधिया</h4>
+            <p> Madhavrao Jiwajirao Scindia (10 March 1945 – 30 September 2001) was an Indian politician and minister in the Government of India. He was a member of the Indian National Congress. He was viewed as a potential future prime ministerial candidate before the 1999 Lok Sabha elections in the aftermath of the controversy over Sonia Gandhi's foreign origin.
+
+Scindia was the son of Jiwajirao Scindia, the last ruling Maharaja of the erstwhile Gwalior State. Upon the death of his father in 1961, and under terms agreed to during the political integration of India, Scindia succeeded to a privy purse, certain privileges, and the use of the title "Maharaja of Gwalior,"[1] which lasted until 1971, whereupon all were abolished by the 26th Amendment to the Constitution of India.[2][3][4]</p>
+            <p> Early life
+Scindia was born in a 96 kuli Maratha family, to the last ruling Maharaja of Gwalior, Jiwajirao Scindia and his mother was Rajmata Vijay Raje Scindia. He married Madhavi Raje Scindia, a daughter of army general of Madhesh Province, Nepal, and a great-granddaughter of Prime Minister of Nepal and Maharaja of Kaski and Lamjung, Juddha Shamsher Jang Bahadur Rana, a patrilineal descendant of Sardar Ramakrishna Kunwar of Gorkha.[5] They had two children, a daughter, Chitrangada Singh (born 1967),[6][7] a son Jyotiraditya Scindia[8] (born 1971).[9][10]
+
+Scindia underwent his schooling in Scindia School, Gwalior and thereafter went for higher studies in Winchester College and at New College, Oxford.[11]
+
+On his return from the UK, Scindia followed the political tradition set by his mother Vijaya Raje Scindia by joining politics. He was elected to the Lok Sabha in 1971 from the Guna constituency on a Bharatiya Jana Sangh ticket.[11]
+
+Career
+Electoral victories
+He won for the first time from Guna constituency at the age of 26. He contested the election on the ticket of Bharatiya Jana Sangh (the precursor of the present day Bharatiya Janata Party), which his family had long patronised. When the Emergency, he fled the country into self-imposed exile in the United Kingdom.
+
+After he returned to India, he resigned from the Bharatiya Jana Sangh. He contested from Guna constituency as an independent candidate and won the seat a second time in spite of the wave in favour of the Janata Party.[12]
+
+In the 1980 election, he switched allegiance to the Indian National Congress and won from Guna a third time. In 1984, he was nominated as the Congress party's candidate from Gwalior in a last-minute manoeuvre to defeat the Bharatiya Janata Party's Atal Bihari Vajpayee, and won by a massive margin. After that Scindia contested from either Gwalior or Guna and won on each occasion.
+
+Ministerial appointments
+The 1984 election brought Scindia his first experience as a minister. He made his mark as an excellent administrator during his stint as Railways Minister (22 October 1986 – 1 December 1989)[13] in the Rajiv Gandhi Ministry.
+
+Prime Ministers P. V. Narasimha Rao made him Minister for Civil Aviation. He faced a turbulent period of agitation by the staff of the domestic carrier, Indian Airlines, and as part of a strategy of disciplining the workforce, he leased a number of aircraft from Russia. Early in 1992 one of these aircraft crashed, though without any loss of life, and Scindia promptly submitted his resignation. Although not known to be too finicky about such notions as ministerial accountability, the prime minister accepted his resignation. Scindia was later reinducted into the Cabinet in 1995 as Minister for Human Resource Development. Scindia is also credited with setting up the Indian Institute of Information Technology and Management (IIITM) at Gwalior as an institution of repute, which got renamed after Atal Bihari Vajpayee as ABV-IIITM.</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 3 ===== -->
+  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/3/30/Jiwajirao_Scindia_of_Gwalior.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">जिवाजीराव सिंधिया</h4>
+            <p>Sir George Jiwajirao Scindia[3] KStJ (26 June 1916 – 16 July 1961) was the ruler of the Gwalior state during the British Raj and later the Rajpramukh (Governor) of the Indian state of Madhya Bharat. Jiwajirao was the Maharaja, of the princely state of Gwalior in central India from 1925 until 1947. After the state was absorbed into independent India, he was granted a privy purse, certain privileges, and the use of the title Maharaja of Gwalior by the Government of India,[1] which he retained until his death in 1961. He also served as the rajpramukh (governor) of the state of Madhya Bharat until 1956.
+
+Early life
+
+Jiwajirao Scindia as a child; Hand-coloured photograph, c. 1930
+Jiwajirao was a scion of the Scindia family, descended from the Maratha general Ranojirao Scindia. Ranojirao was the head of the Maratha armies in Malwa during the first part of the 18th century, as the Maratha Empire was expanding rapidly at the expense of the Mughal Empire. Daulatrao Scindia shifted the capital from Ujjain to the new city of Lashkar, near the historic fortress-city of Gwalior. The Scindias signed the peace treaty of Salbai with British in 1818 at the conclusion of their benefits from them after they lost the 3rd War Third Anglo-Maratha War. At 68,291 km2, Gwalior was the largest state in the Central India Agency, and among the five largest princely states in all of India.
+
+Personal life
+
+Scindia with his sister Kamala Raja Scindia
+Jiwajirao became Maharaja on 5 June 1925, succeeding his father Madho Rao Scindia upon his death. He also had a sister, Kamala Raja Scindia. On 21 February 1941, he married Lekha Divyeshwari Devi, afterwards known as Vijaya Raje Scindia, who was descended from the powerful Rana dynasty of Nepal. They were the parents of five children, four daughters and a son, including:
+
+Padma Raje, was married to HH Maharaja Kirit Bikram Manikya Debbarman of Tripura. Died in Calcutta, circa 1965.
+Usha Raje, is married to Nepalese Minister Pashupati Shamsher Jang Bahadur Rana of the Rana Dynasty, who is the grandson of Shree Teen Maharaja Mohan Shamsher Jang Bahadur Rana.
+Madhavrao Scindia (10 March 1945 – 30 September 2001), the former union cabinet minister in India, Member of Parliament and King of Gwalior.
+Vasundhara Raje, Former chief minister of the Indian state of Rajasthan. and former union Minister of Small Scale Industries and Agro and Rural Industries,
+Yashodhara Raje, Bharatiya Janata Party (BJP) leader and MLA of the Indian state of Madhya Pradesh.
+Career
+
+Jivajirao on a 1942 half anna coin.
+Jiwajirao ruled Gwalior state as an absolute monarch and a British vassal until shortly after India's independence on 15 August 1947. The rulers of Indian princely states were required to accede to either of the two dominions (India and Pakistan) created by the India Independence Act 1947. Jivajirao signed a covenant with the rulers of the adjoining princely states that united their several states to form a new state within the Union of India known as Madhya Bharat. This new covenanted state was to be governed by a council headed by a ruler to be known as the Rajpramukh. Madhya Bharat signed a fresh Instrument of Accession with the Government of India effective 15 June 1948. Jivajirao Scindia became the first rajpramukh, or appointed governor, of the state on 28 May 1948. He served as Rajpramukh until 31 October 1956, when the state was merged into Madhya Pradesh.
+
+Family
+After his death in 1961, Jiwajirao's family remained involved in politics. In 1962, his widow, Rajmata Vijayraje Scindia, was elected to the Lok Sabha, beginning the family's career in electoral politics. She was initially a member of the Indian National Congress party, parted ways in 1967, joined the Jana Sangh, and later became an influential member of the Bharatiya Janata Party. Their son, Madhavrao Scindia, was elected to the Lok Sabha in 1971, representing the Jana Sangh. He later joined the Congress in 1980 served until his death in 2001. Madhavrao's son, Jyotiraditya Scindia, was also a member of the Congress Party, was elected in 2002 to the seat formerly held by his father. On 10-March-2020 Jyotiraditya Scindia quit Indian National Congress and was elected to the Rajya Sabha in June 2020 as BJP member. Jivajirao's daughter Vasundhara Raje is an eminent politician associated with the Bharatiya Janata Party. She was the first woman Chief Minister of Rajasthan and also was a member of the Lok Sabha for five consecutive terms since 1989. Vasundhara Raje's son, Dushyant Singh of Dholpur is a BJP MP. His youngest daughter, Yashodhara Raje has served as a State Minister in the Madhya Pradesh government.
+
+Full name and titles
+Jivajirao was also known with his full name: Lieutenant-General His Highness Ali Jah, Umdat ul-Umara, Hisam us-Sultanat, Mukhtar ul-Mulk, Azim ul-Iqtidar, Rafi-us-Shan Wala Shikoh, Muhtasham-i-Dauran, Maharajadhiraj Maharaja Shrimant Jivaji Rao Scindia Bahadur, Shrinath, Mansur-i-Zaman, Fidvi-i-Hazrat-i-Malika-i-Mua'zzama-i-Rafi-ud-Darja-i-Inglistan, Maharaja Scindia of Gwalior, GCSI, GCIE.
+
+During his life he acquired several titles and honorific names:
+
+1916 – 1925: Yuvaraja Maharaj Shrimant Jivaji Rao Scindia Bahadur
+1925 – 1937: His Highness Ali Jah, Umdat ul-Umara, Hisam us-Sultanat, Mukhtar ul-Mulk, Azim ul-Iqtidar, Rafi-us-Shan Wala Shikoh, Muhtasham-i-Dauran, Maharajadhiraj Maharaja Shrimant Jivaji Rao Scindia Bahadur, Shrinath, Mansur-i-Zaman, Fidvi-i-Hazrat-i-Malika-i-Mua'zzama-i-Rafi-ud-Darja-i-Inglistan, Maharaja Scindia of Gwalior
+1937 – 1941: His Highness Ali Jah, Umdat ul-Umara, Hisam us-Sultanat, Mukhtar ul-Mulk, Azim ul-Iqtidar, Rafi-us-Shan Wala Shikoh, Muhtasham-i-Dauran, Maharajadhiraj Maharaja Shrimant Jivaji Rao Scindia Bahadur, Shrinath, Mansur-i-Zaman, Fidvi-i-Hazrat-i-Malika-i-Mua'zzama-i-Rafi-ud-Darja-i-Inglistan, Maharaja Scindia of Gwalior, KStJ
+1941 – 1943: Captain His Highness Ali Jah, Umdat ul-Umara, Hisam us-Sultanat, Mukhtar ul-Mulk, Azim ul-Iqtidar, Rafi-us-Shan Wala Shikoh, Muhtasham-i-Dauran, Maharajadhiraj Maharaja Shrimant Sir Jivaji Rao Scindia Bahadur, Shrinath, Mansur-i-Zaman, Fidvi-i-Hazrat-i-Malika-i-Mua'zzama-i-Rafi-ud-Darja-i-Inglistan, Maharaja Scindia of Gwalior, GCIE, KStJ
+1943 – 1945: Major His Highness Ali Jah, Umdat ul-Umara, Hisam us-Sultanat, Mukhtar ul-Mulk, Azim ul-Iqtidar, Rafi-us-Shan Wala Shikoh, Muhtasham-i-Dauran, Maharajadhiraj Maharaja Shrimant Sir Jivaji Rao Scindia Bahadur, Shrinath, Mansur-i-Zaman, Fidvi-i-Hazrat-i-Malika-i-Mua'zzama-i-Rafi-ud-Darja-i-Inglistan, Maharaja Scindia of Gwalior, GCIE, KStJ
+1945 – 1946: Major-General His Highness Ali Jah, Umdat ul-Umara, Hisam us-Sultanat, Mukhtar ul-Mulk, Azim ul-Iqtidar, Rafi-us-Shan Wala Shikoh, Muhtasham-i-Dauran, Maharajadhiraj Maharaja Shrimant Sir Jivaji Rao Scindia Bahadur, Shrinath, Mansur-i-Zaman, Fidvi-i-Hazrat-i-Malika-i-Mua'zzama-i-Rafi-ud-Darja-i-Inglistan, Maharaja Scindia of Gwalior, GCIE, KStJ
+1946 – 1961: Lieutenant-General His Highness Ali Jah, Umdat ul-Umara, Hisam us-Sultanat, Mukhtar ul-Mulk, Azim ul-Iqtidar, Rafi-us-Shan Wala Shikoh, Muhtasham-i-Dauran, Maharajadhiraj Maharaja Shrimant Sir Jivaji Rao Scindia Bahadur, Shrinath, Mansur-i-Zaman, Fidvi-i-Hazrat-i-Malika-i-Mua'zzama-i-Rafi-ud-Darja-i-Inglistan, Maharaja Scindia of Gwalior </p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 4 ===== -->
+  <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/6/6a/HH_Maharaja_Sir_Madho_Rao_Scindia_of_Gwalior.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">माधवराव सिंधिया</h4>
+            <p>माधवराव सिंधिया ग्वालियर के शाही परिवार के सदस्य थे। उन्होंने शिक्षा और कला के क्षेत्र में महत्वपूर्ण योगदान दिया।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 5 ===== -->
+  <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/f/fd/The_Maharajah_Scindia_of_Gwalior%22_%28r.1843-1886%29_as_seen_in_the_Illustrated_London_News.gif') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">जयजीराव सिंधिया</h4>
+            <p>शिवाजीराव सिंधिया का शासन और योगदान ग्वालियर के इतिहास में महत्वपूर्ण स्थान रखता है।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ===== MODAL 6 ===== -->
+  <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Jankoji_Rao_Scindia_II_of_Gwalior.jpg/323px-Jankoji_Rao_Scindia_II_of_Gwalior.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">जनकोजिराव  सिंधिया २ </h4>
+            <p>यशोधरा राजे सिंधिया ने सामाजिक कार्यों और महिला सशक्तिकरण में सक्रिय योगदान दिया।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 7 ===== -->
+  <div class="modal fade" id="modal7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/MAHARAJA_DAULAT_RAO_SCINDIA_OF_GWALIOR_%28R._1794-1827%29.jpg/390px-MAHARAJA_DAULAT_RAO_SCINDIA_OF_GWALIOR_%28R._1794-1827%29.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">दौलतराव सिंधिया </h4>
+            <p>देवेंद्र फडणवीस महाराष्ट्र के पूर्व मुख्यमंत्री रहे हैं और उन्होंने कई विकास योजनाओं का नेतृत्व किया।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 8 ===== -->
+  <div class="modal fade" id="modal8" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Jankoji_Scindia_in_Battle_of_Panipat_%281761%29_fighting_Afghans.jpg/318px-Jankoji_Scindia_in_Battle_of_Panipat_%281761%29_fighting_Afghans.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">जनकोजिराव सिंधिया १ </h4>
+            <p>एकनाथ शिंदे महाराष्ट्र के राजनीतिक क्षेत्र में सक्रिय नेता हैं, जिन्होंने कई सामाजिक और विकास परियोजनाओं का नेतृत्व किया।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 9 ===== -->
+  <div class="modal fade" id="modal9" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Mahadaji_Sindhia.jpg/405px-Mahadaji_Sindhia.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">माहादाजीराव सिंधिया </h4>
+            <p>उद्धव ठाकरे महाराष्ट्र के राजनीतिक नेता और शिवसेना पार्टी के प्रमुख रहे हैं। उन्होंने सामाजिक कार्यों में भी योगदान दिया।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 10 ===== -->
+  <div class="modal fade" id="modal10" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Dattaji_Rao_Scindia.jpg/351px-Dattaji_Rao_Scindia.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">दत्ताजीराव सिंधिया </h4>
+            <p>बालासाहेब ठाकरे महाराष्ट्र के प्रमुख राजनीतिक और सामाजिक नेता थे। उन्होंने मीडिया और जनजागरण में महत्वपूर्ण योगदान दिया।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 11 ===== -->
+  <div class="modal fade" id="modal11" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Jayappaji_Rao_Shinde.jpg/500px-Jayappaji_Rao_Shinde.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">जयप्पाजीराव सिंधिया </h4>
+            <p>राज ठाकरे महाराष्ट्र के राजनीतिक नेता हैं और महाराष्ट्र नवनिर्माण सेना के संस्थापक हैं। उन्होंने स्थानीय और राज्य स्तर पर कई कार्य किए।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL 12 ===== -->
+  <div class="modal fade" id="modal12" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body d-flex flex-column flex-md-row p-0">
+          <div class="modal-image flex-shrink-0"
+               style="background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/Ranoji_Rao_Scindia.jpg') center/cover; width:40%; min-height:250px; border-radius:5px; border:2px solid black;">
+          </div>
+          <div class="modal-info p-4" style="width:60%; background:#fff;">
+            <h4 class="fw-bold mb-3">रानोंजीराव सिंधिया </h4>
+            <p>नरेंद्र मोदी भारत के वर्तमान प्रधानमंत्री हैं। उन्होंने प्रशासन, आर्थिक सुधार और डिजिटल इंडिया पहल में महत्वपूर्ण योगदान दिया है।</p>
+            <button type="button" class="btn btn-outline-secondary mt-3" data-bs-dismiss="modal">बंद करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
+  <!-- CSS for "और पढ़ें" text -->
+  <style>
+    .view-more-text {
+      cursor: pointer;
+      color: #FFD9B3; /* light bhagwa */
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .view-more-text:hover {
+      color: #FF9933;
+    }
+  </style>
+
+    <!-- Committees -->
+    <section id="committees" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title">हमारी समितियाँ</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card-custom">
+              <h5 class="text-bhagwa"><i class="fas fa-hands-helping me-2"></i>समाज कल्याण समिति</h5>
+              <p>समाज के कल्याण और सहायता हेतु कार्यरत।</p>
+              <div class="mt-3">
+                <p class="mb-1"><strong>सभापति:</strong> राजेंद्र चिटनिस</p>
+                <p class="mb-0"><strong>संयुक्त चिटनिस:</strong> विकास चिटनिस</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card-custom">
+              <h5 class="text-bhagwa"><i class="fas fa-book-open me-2"></i>विद्या प्रसारक समिति</h5>
+              <p>छात्रवृत्ति, शिक्षा व मार्गदर्शन के लिए समर्पित।</p>
+              <div class="mt-3">
+                <p class="mb-1"><strong>सभापति:</strong> सुनील चिटनिस</p>
+                <p class="mb-0"><strong>संयुक्त चिटनिस:</strong> अंजलि चिटनिस</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card-custom">
+              <h5 class="text-bhagwa"><i class="fas fa-home me-2"></i>बोर्डिंग समिति</h5>
+              <p>ग्वालियर में नि:शुल्क छात्रावास का संचालन।</p>
+              <div class="mt-3">
+                <p class="mb-1"><strong>सभापति:</strong> महेश चिटनिस</p>
+                <p class="mb-0"><strong>संयुक्त चिटनिस:</strong> अजय चिटनिस</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaders -->
+    <section id="leaders" class="py-5">
+      <div class="container">
+        <h2 class="section-title">हमारा नेतृत्व</h2>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="leader-card">
+              <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRWImgCgFkL_BuRY3BN358CBl7dDz3ZpjKvlsb6tdRd4f4r9fmxit0lyqG9kWubEvo-GNIH-9vGk2RBxQAuWSlMCqeJVBba2QoTaTEd-w" class="leader-img" alt="ज्योतिरादित्य सिंधिया">
+              <h5>ज्योतिरादित्य सिंधिया</h5>
+              <p>मुख्य संरक्षक</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="leader-card">
+              <img src="https://i.ibb.co/1TgY0zv/user.jpg" class="leader-img" alt="राजेश जाधव">
+              <h5>राजेश जाधव</h5>
+              <p>अध्यक्ष</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="leader-card">
+              <img src="https://i.ibb.co/1TgY0zv/user.jpg" class="leader-img" alt="संजय पवार">
+              <h5>संजय पवार</h5>
+              <p>उपाध्यक्ष</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="leader-card">
+              <img src="https://i.ibb.co/1TgY0zv/user.jpg" class="leader-img" alt="अमित देशमुख">
+              <h5>अमित देशमुख</h5>
+              <p>सचिव</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Section -->
+      <section id="programs" class="py-5 bg-light">
+          <div class="container">
+              <h2 class="section-title marathi-font">हमारे कार्यक्रम</h2>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <h3 class="mb-4 hindi">पिछले कार्यक्रम</h3>
+                      <div class="program-card">
+                          <h5 class="hindi">वार्षिक छात्रवृत्ति वितरण (2023)</h5>
+                          <p class="text-muted">15 जनवरी, 2023</p>
+                          <p class="hindi">मराठा समुदाय के 150 योग्य छात्रों को छात्रवृत्ति वितरित की गई।</p>
+                      </div>
+                      <div class="program-card">
+                          <h5 class="hindi">सांस्कृतिक उत्सव</h5>
+                          <p class="text-muted">8 मार्च, 2023</p>
+                          <p class="hindi">पारंपरिक संगीत, नृत्य और खाद्य उत्सव के साथ मराठी संस्कृति का जश्न मनाया गया।
+                          </p>
+                      </div>
+                      <div class="program-card">
+                          <h5 class="hindi">निःशुल्क स्वास्थ्य शिविर</h5>
+                          <p class="text-muted">22 जुलाई, 2023</p>
+                          <p class="hindi">स्थानीय अस्पतालों के सहयोग से निःशुल्क स्वास्थ्य जांच शिविर का आयोजन किया गया।
+                          </p>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6">
+                      <h3 class="mb-4 hindi">आगामी कार्यक्रम</h3>
+                      <div class="program-card">
+                          <h5 class="hindi">युवा नेतृत्व कार्यशाला</h5>
+                          <p class="text-muted">18 नवंबर, 2023</p>
+                          <p class="hindi">हमारे समुदाय के युवाओं में नेतृत्व कौशल विकसित करने के लिए एक कार्यशाला।</p>
+                      </div>
+                      <div class="program-card">
+                          <h5 class="hindi">118वां स्थापना दिवस</h5>
+                          <p class="text-muted">10 दिसंबर, 2023</p>
+                          <p class="hindi">मराठा समुदाय की सेवा के 118 वर्ष पूरे होने का जश्न।</p>
+                      </div>
+                      <div class="program-card">
+                          <h5 class="hindi">करियर मार्गदर्शन सेमिनार</h5>
+                          <p class="text-muted">12 जनवरी, 2024</p>
+                          <p class="hindi">करियर के अवसरों और उच्च शिक्षा पर छात्रों के लिए मार्गदर्शन।</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- Hostel Benefits Section -->
+      <section class="py-5">
+          <div class="container">
+              <h2 class="section-title marathi-font">छात्रावास लाभ</h2>
+              <div class="hostel-benefits">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="benefit-item">
+                              <div class="benefit-icon"><i class="fas fa-home"></i></div>
+                              <div>
+                                  <h5 class="hindi">मुफ्त आवास</h5>
+                                  <p class="hindi">मराठा छात्रों के लिए निःशुल्क छात्रावास सुविधा</p>
+                              </div>
+                          </div>
+                          <div class="benefit-item">
+                              <div class="benefit-icon"><i class="fas fa-book"></i></div>
+                              <div>
+                                  <h5 class="hindi">पुस्तकालय सुविधा</h5>
+                                  <p class="hindi">अध्ययन के लिए अच्छी तरह से सुसज्जित पुस्तकालय</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="benefit-item">
+                              <div class="benefit-icon"><i class="fas fa-utensils"></i></div>
+                              <div>
+                                  <h5 class="hindi">भोजन सुविधा</h5>
+                                  <p class="hindi">पौष्टिक और स्वादिष्ट भोजन की व्यवस्था</p>
+                              </div>
+                          </div>
+                          <div class="benefit-item">
+                              <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                              <div>
+                                  <h5 class="hindi">सामुदायिक वातावरण</h5>
+                                  <p class="hindi">सीखने और बढ़ने के लिए सहायक वातावरण</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+
+    <!-- Gallery Section -->
+      <section id="gallery" class="py-5 bg-light">
+          <div class="container">
+              <h2 class="section-title marathi-font">गैलरी</h2>
+              <div class="row">
+                  <div class="col-lg-3 col-md-4 col-6 mb-4">
+                      <div class="gallery-item">
+                          <img src=https://files.yappe.in/place/full/maratha-boarding-house-4258447.webp;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23FFB366'/><text x='150' y='100' font-family='Arial' font-size='16' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>कार्यक्रम 1</text></svg>"
+                              alt="गैलरी छवि 1">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-6 mb-4">
+                      <div class="gallery-item">
+                          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23FF9933'/><text x='150' y='100' font-family='Arial' font-size='16' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>कार्यक्रम 2</text></svg>"
+                              alt="गैलरी छवि 2">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-6 mb-4">
+                      <div class="gallery-item">
+                          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23E67E22'/><text x='150' y='100' font-family='Arial' font-size='16' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>कार्यक्रम 3</text></svg>"
+                              alt="गैलरी छवि 3">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-6 mb-4">
+                      <div class="gallery-item">
+                          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23FFB366'/><text x='150' y='100' font-family='Arial' font-size='16' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>कार्यक्रम 4</text></svg>"
+                              alt="गैलरी छवि 4">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-6 mb-4">
+                      <div class="gallery-item">
+                          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23FF9933'/><text x='150' y='100' font-family='Arial' font-size='16' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>छात्रावास</text></svg>"
+                              alt="गैलरी छवि 5">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-6 mb-4">
+                      <div class="gallery-item">
+                          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23E67E22'/><text x='150' y='100' font-family='Arial' font-size='16' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>छात्र</text></svg>"
+                              alt="गैलरी छवि 6">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-6 mb-4">
+                      <div class="gallery-item">
+                          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23FFB366'/><text x='150' y='100' font-family='Arial' font-size='16' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>कार्यक्रम 7</text></svg>"
+                              alt="गैलरी छवि 7">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-6 mb-4">
+                      <div class="gallery-item">
+                          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23FF9933'/><text x='150' y='100' font-family='Arial' font-size='16' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>कार्यक्रम 8</text></svg>"
+                              alt="गैलरी छवि 8">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+     <!-- Contact Section -->
+      <section id="contact" class="py-5">
+          <div class="container">
+              <h2 class="section-title marathi-font">संपर्क करें</h2>
+              <div class="row">
+                  <div class="col-md-6 mb-4">
+                      <div class="contact-info">
+                          <h4 class="mb-4 hindi">संपर्क सूचना</h4>
+                          <p class="hindi"><i class="fas fa-map-marker-alt contact-icon"></i> 123 सभा भवन, मुख्य मार्ग,
+                              ग्वालियर, मध्य प्रदेश</p>
+                          <p class="hindi"><i class="fas fa-phone contact-icon"></i> +91 98765 43210</p>
+                          <p class="hindi"><i class="fas fa-envelope contact-icon"></i> info@mkhsabha.org</p>
+
+                          <div class="mt-4">
+                              <h5 class="hindi">कार्यालय समय</h5>
+                              <p class="hindi">सोमवार से शनिवार: सुबह 10:00 - शाम 5:00</p>
+                              <p class="hindi">रविवार: बंद</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="contact-info">
+                          <h4 class="mb-4 hindi">छात्रावास प्रवेश जानकारी</h4>
+                          <p class="hindi">ग्वालियर में मराठा छात्रों के लिए मुफ्त छात्रावास सुविधाओं के बारे में जानकारी
+                              के लिए, कृपया कार्य hours के दौरान हमारे कार्यालय आएं या हमसे संपर्क करें:</p>
+                          <p class="hindi"><i class="fas fa-phone contact-icon"></i> छात्रावास प्रबंधक: +91 97654 32109
+                          </p>
+                          <p class="hindi"><i class="fas fa-envelope contact-icon"></i> hostel@mkhsabha.org</p>
+
+                          <div class="mt-4">
+                              <h5 class="hindi">छात्रावास का पता</h5>
+                              <p class="hindi">महाराष्ट्र क्षत्रिय छात्रालय, जीवाजी विश्वविद्यालय के पास, ग्वालियर, मध्य
+                                  प्रदेश</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4 mb-4">
+                      <h5 class="marathi-font">महाराष्ट्र क्षत्रिय हितचिंतक सभा</h5>
+                      <p class="hindi">1905 में स्थापित</p>
+                      <p class="hindi">मराठा समुदाय के कल्याण के लिए कार्यरत </p>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                      <h5 class="hindi">त्वरित लिंक</h5>
+                      <ul class="list-unstyled">
+                          <li><a href="#about" class="hindi">परिचय</a></li>
+                          <li><a href="#committees" class="hindi">समितियाँ</a></li>
+                          <li><a href="#programs" class="hindi">कार्यक्रम</a></li>
+                          <li><a href="#contact" class="hindi">संपर्क</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4">
+                      <h5 class="hindi">हमसे जुड़ें</h5>
+                      <div class="d-flex">
+                          <a href="#" class="me-3"><i class="fab fa-facebook-f fa-2x"></i></a>
+                          <a href="#" class="me-3"><i class="fab fa-twitter fa-2x"></i></a>
+                          <a href="#" class="me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                          <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+                      </div>
+                  </div>
+              </div>
+              <hr>
+              <div class="text-center">
+                  <p class="hindi">&copy; 2025 महाराष्ट्र क्षत्रिय हितचिंतक सभा। सर्वाधिकार सुरक्षित।</p>
+              </div>
+          </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
